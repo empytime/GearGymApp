@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="onClick()">
+        <ion-icon slot="start" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Bienvenido {{usuario.nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-card>
+    <img alt="Silhouette of mountains" src="https://ossfitness.com/fotos/2021/07/strong-man-training-in-gym-768x512.jpg" />
+    <ion-card-header>
+      <ion-card-title> ¡Has conseguido logearte exitosamente! </ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Proximamente se agregaran mas funcionalidades para que no te pierdas ninguna novedad 👀
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button color="danger" (click)="eliminarElemento()">Cerrar Sesión</ion-button>
+</ion-content>
+
