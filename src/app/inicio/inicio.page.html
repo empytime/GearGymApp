@@ -10,19 +10,39 @@
     <ion-title>Bienvenido {{usuario.nombre}}</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
 
-  <ion-card>
-    <img alt="Silhouette of mountains" src="https://ossfitness.com/fotos/2021/07/strong-man-training-in-gym-768x512.jpg" />
-    <ion-card-header>
-      <ion-card-title> ¡Has conseguido logearte exitosamente! </ion-card-title>
-    </ion-card-header>
+  <ion-content>
+    <ion-card (click)="irAEjercicios()">
+      <img src="../../assets/images/imagen_para_ejercicio.jpg" alt="Ejercicios">
+      <ion-card-header>
+        Ejercicios
+      </ion-card-header>
+    </ion-card>
   
-    <ion-card-content>
-      Proximamente se agregaran mas funcionalidades para que no te pierdas ninguna novedad 👀
-    </ion-card-content>
-  </ion-card>
+    <ion-card (click)="irARutinas()">
+      <img src="../../assets/images/rutina.jpg" alt="Rutinas">
+      <ion-card-header>
+        Rutinas
+      </ion-card-header>
+    </ion-card>
 
-  <ion-button color="danger" (click)="eliminarElemento()">Cerrar Sesión</ion-button>
-</ion-content>
+    <ion-card >
+      <img src="../../assets/images/imagen_ejercicio_extra.jpg" alt="Extras">
+      <ion-card-header>
+        Extras
+      </ion-card-header>
+    </ion-card>
+  
+    <ion-card (click)="irANutricion()">
+      <img src="../../assets/images/foto_de_fruta.jpg" alt="Nutrición">
+      <ion-card-header>
+        Nutrición
+      </ion-card-header>
+    </ion-card>
+
+
+  </ion-content>
+
+  
+
 

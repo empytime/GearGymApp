@@ -28,6 +28,18 @@ const routes: Routes = [
     canActivate: [IngresadoGuard],
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
+  {
+    path: 'ejercicios',
+    loadChildren: () => import('./ejercicios/ejercicios.module').then( m => m.EjerciciosPageModule)
+  },
+  {
+    path: 'rutinas',
+    loadChildren: () => import('./rutinas/rutinas.module').then( m => m.RutinasPageModule)
+  },
+  {
+    path: 'nutricion',
+    loadChildren: () => import('./nutricion/nutricion.module').then( m => m.NutricionPageModule)
+  },
 ];
 
 @NgModule({
