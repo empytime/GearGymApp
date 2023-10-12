@@ -1,0 +1,29 @@
+ion-card {
+    position: relative;
+    text-align: center;
+  }
+  
+  /* Estilo para la imagen */
+  ion-card img {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Estilo para el encabezado (título) */
+  ion-card-header {
+    position: absolute;
+    top: 50%; /* Alinea verticalmente en el centro */
+    left: 0;
+    right: 0;
+    transform: translateY(-50%); /* Alinea verticalmente en el centro */
+    text-align: center;
+    width: 100%;
+    color: white;
+  }
+  
+  
+  
+  
+  
+  
+  
