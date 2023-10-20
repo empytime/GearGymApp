@@ -40,6 +40,10 @@ const routes: Routes = [
     path: 'nutricion',
     loadChildren: () => import('./nutricion/nutricion.module').then( m => m.NutricionPageModule)
   },
+  {
+    path: 'calendario',
+    loadChildren: () => import('./calendario/calendario.module').then( m => m.CalendarioPageModule)
+  },
 ];
 
 @NgModule({

@@ -39,12 +39,12 @@ export class InicioPage implements OnInit {
     }
     irAExtras() {
       // Navegar a la página de extras
-      this.navCtrl.navigateForward('extras');
+      this.navCtrl.navigateForward('/');
     }
   
     irANutricion() {
       // Navegar a la página de nutrición
-      this.navCtrl.navigateForward('nutricion');
+      this.navCtrl.navigateForward('calendario');
     }
 
     onClick()

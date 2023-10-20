@@ -1,7 +1,11 @@
+
 .fondo-side-menu {
-    background-image: url(patron_pesas.jpg);
+    background-image: url(./../../../assets/images/patron_pesas.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 300px;
+    overflow-y: auto;
+}
+.lista-items{
+    max-height: 100;
 }
