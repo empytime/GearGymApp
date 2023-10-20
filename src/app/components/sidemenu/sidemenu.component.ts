@@ -5,10 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './sidemenu.component.html',
   styleUrls: ['./sidemenu.component.scss'],
 })
-export class SidemenuComponent  implements OnInit {
+export class SidemenuComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
+  lockScroll(lock: boolean) {
+    document.body.classList[lock ? 'add' : 'remove']('no-scroll');
+  }
 }
