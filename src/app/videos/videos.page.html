@@ -5,16 +5,26 @@
 </ion-header>
 
 <ion-content>
-  <!-- Video de YouTube arriba -->
- 
+  
+  <ion-list>
+    <ion-item *ngFor="let video of videos">
+      <ion-thumbnail slot="start">
+        <img [src]="video.snippet.thumbnails.default.url" alt="Video Thumbnail">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ video.snippet.title }}</h2>
+        <p>{{ video.snippet.description }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
-  <!-- Tarjeta para escribir ejercicios abajo -->
+ 
   <ion-card>
     <ion-card-header>
       Ejercicios
     </ion-card-header>
     <ion-card-content>
-      <!-- Aquí puedes agregar un formulario o un área de texto para escribir los ejercicios relacionados con el video -->
+      
     </ion-card-content>
   </ion-card>
 </ion-content>
