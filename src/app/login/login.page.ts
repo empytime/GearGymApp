@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AlertController, NavController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router'; 
+import { FirebaseService } from '../services/login-register/firebase.service';
 
 @Component({
   selector: 'app-login',
@@ -13,45 +15,52 @@ export class LoginPage {
   constructor(
     public fb: FormBuilder,
     public alertController: AlertController,
-    public navCtrl: NavController
+    private router: Router, 
+    private firebaseService: FirebaseService
   ) {
     this.formularioLogin = this.fb.group({
-      nombreUser: ["", Validators.required],
-      passwordUser: ["", Validators.required],
+      'nombreUser': ['', [Validators.required]],
+      'passwordUser': ['', [Validators.required]],
     });
   }
 
   async ingresar() {
-    const nombreUsuario = this.formularioLogin.value.nombreUser;
-    const contrasena = this.formularioLogin.value.passwordUser;
-  
-    
-    const usuarioString = localStorage.getItem('usuario');
-    if (usuarioString !== null) {
-      const usuario = JSON.parse(usuarioString);
+    try {
+      const { nombreUser, passwordUser } = this.formularioLogin.value;
+
       
-      
-      if (usuario.nombre === nombreUsuario && usuario.password === contrasena) {
-        console.log("Ingresado");
-        localStorage.setItem("ingresado", "true");
-        this.navCtrl.navigateRoot("inicio");
-      } else {
+      if (this.formularioLogin.invalid) {
         const alert = await this.alertController.create({
-          header: "Datos incorrectos",
-          message: "Los datos ingresados no son válidos",
-          buttons: ["Aceptar"],
+          header: 'Datos incompletos o inválidos',
+          message: 'Verifica los campos del formulario.',
+          buttons: ['Aceptar'],
         });
-    
+
         await alert.present();
+        return;
       }
-    } else {
-      const alert = await this.alertController.create({
-        header: "Usuario no registrado",
-        message: "Debes registrarte primero",
-        buttons: ["Aceptar"],
-      });
-  
-      await alert.present();
+
+      
+      this.firebaseService.login({ email: nombreUser, password: passwordUser })
+        .then(() => {
+          
+          console.log('Inicio de sesión exitoso');
+
+          
+          this.router.navigate(['inicio']); 
+        })
+        .catch(async error => {
+          
+          const alert = await this.alertController.create({
+            header: 'Error de inicio de sesión',
+            message: 'Los datos ingresados no son válidos. Verifica tu correo electrónico y contraseña.',
+            buttons: ['Aceptar'],
+          });
+
+          await alert.present();
+        });
+    } catch (error) {
+      console.error('Error inesperado al iniciar sesión:', error);
     }
   }
 }

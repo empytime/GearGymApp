@@ -33,7 +33,7 @@ export class InicioPage implements OnInit {
   }
 
   irAExtras() {
-    this.navCtrl.navigateForward('extras');
+    this.navCtrl.navigateForward('calendario');
   }
 
   irANutricion() {
