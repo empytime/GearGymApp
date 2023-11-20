@@ -47,7 +47,11 @@ const routes: Routes = [
   {
     path: 'videos/:categoria',
     loadChildren: () => import('./videos/videos.module').then( m => m.VideosPageModule)
+  },  {
+    path: 'barcode-scan',
+    loadChildren: () => import('./barcode-scan/barcode-scan.module').then( m => m.BarcodeScanPageModule)
   },
+
 ];
 
 @NgModule({

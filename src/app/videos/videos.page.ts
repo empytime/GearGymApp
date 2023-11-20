@@ -25,12 +25,11 @@ export class VideosPage implements OnInit {
   }
 
   loadYouTubeVideos(categoria: string) {
-    // Aquí debes realizar la lógica necesaria para obtener los videoIds según la categoría
-    // Puedes tener una lista de videoIds para cada categoría y seleccionar la correcta
+    
     const videoIdsMap: Map<string, string[]> = new Map([
-      ['Categoría 1', ['2tXQbi16EdI', 'KrpKmehR--A']],
-      ['Categoría 2', ['ZIm_qrJSOds', '8I463L8UaTI']],
-      // Agrega más categorías según sea necesario
+      ['Categoría 1', ['2tXQbi16EdI', ]],
+      ['Categoría 2', ['ZIm_qrJSOds', ]],
+      
     ]);
 
     const videoIds = videoIdsMap.get(categoria) || [];

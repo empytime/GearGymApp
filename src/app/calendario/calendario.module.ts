@@ -9,7 +9,7 @@ import { CalendarioPageRoutingModule } from './calendario-routing.module';
 import { CalendarioPage } from './calendario.page';
 import { NgCalendarModule } from 'ionic6-calendar';
 
-
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 @NgModule({
   imports: [
@@ -17,7 +17,9 @@ import { NgCalendarModule } from 'ionic6-calendar';
     FormsModule,
     IonicModule,
     CalendarioPageRoutingModule,
-    NgCalendarModule
+    NgCalendarModule,
+    IonicStorageModule.forRoot(),
+
   ],
   declarations: [CalendarioPage]
 })

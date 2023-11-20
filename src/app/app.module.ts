@@ -10,7 +10,8 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire/compat'; 
 import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 @NgModule({
   declarations: [AppComponent, SidemenuComponent],
@@ -20,10 +21,15 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     IonicModule.forRoot(),
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideAuth(() => getAuth()),AngularFireAuthModule
+    provideAuth(() => getAuth()),
+    AngularFireAuthModule,
+    IonicStorageModule.forRoot({
+      name: '__mydb',
+      driverOrder: ['indexeddb', 'sqlite', 'websql'],
+    }),
   ],
   exports: [SidemenuComponent],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy},BarcodeScanner],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
