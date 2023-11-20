@@ -11,4 +11,11 @@ ion-menu {
         border-bottom: 1px solid #000; // Agrega un borde entre los elementos de la lista
       }
     }
+    .fondo-side-menu {
+        background-image: url(../../../assets/images/patron_pesas.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 300px;
+    }
   }

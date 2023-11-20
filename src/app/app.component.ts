@@ -1,3 +1,4 @@
+// app.component.ts
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  // Puedes agregar lógica y propiedades según sea necesario
+
   constructor() {}
 }

@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidemenu.component.scss'],
 })
 export class SidemenuComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() { }
-
   
+
+  constructor() {}
+
+  ngOnInit() {
+    
+  }
 }

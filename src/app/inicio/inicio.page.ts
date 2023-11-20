@@ -36,8 +36,8 @@ export class InicioPage implements OnInit {
     this.navCtrl.navigateForward('calendario');
   }
 
-  irANutricion() {
-    this.navCtrl.navigateForward('nutricion');
+  irACalculadora() {
+    this.navCtrl.navigateForward('calculadora');
   }
 
   onClick() {
