@@ -11,7 +11,5 @@ export class SidemenuComponent implements OnInit {
 
   ngOnInit() { }
 
-  lockScroll(lock: boolean) {
-    document.body.classList[lock ? 'add' : 'remove']('no-scroll');
-  }
+  
 }

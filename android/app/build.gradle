@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+android {
+
+  packagingOptions {
+    resources {
+      excludes += ['META-INF/NOTICE', 'META-INF/LICENSE']
+    }
+  }
+  namespace "io.ionic.starter"
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  defaultConfig {
+    applicationId "io.ionic.starter"
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode 1
+    versionName "1.0"
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    aaptOptions {
+      ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+    }
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+}
+
+repositories {
+  flatDir {
+    dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+  }
+}
+
+dependencies {
+  implementation fileTree(include: ['*.jar'], dir: 'libs')
+  implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+  implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
+  implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
+  implementation project(':capacitor-android')
+
+  // Excluir la dependencia de ZXing de barcodescanner-release-2.1.5-runtime
+  implementation ('@ionic-native/barcode-scanner:5.36.0') {
+    exclude group: 'com.google.zxing', module: 'core'
+  }
+
+  // Agregar la versión más reciente de ZXing compatible con AndroidX
+  implementation 'com.google.zxing:core:3.4.0' // Reemplaza 3.4.0 con la versión más reciente disponible
+
+  testImplementation "junit:junit:$junitVersion"
+  androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
+  androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+  implementation project(':capacitor-cordova-android-plugins')
+}
+
+apply from: 'capacitor.build.gradle'
+
+try {
+  def servicesJSON = file('google-services.json')
+  if (servicesJSON.text) {
+    apply plugin: 'com.google.gms.google-services'
+  }
+} catch(Exception e) {
+  logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+}

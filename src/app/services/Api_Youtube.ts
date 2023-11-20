@@ -2,13 +2,13 @@
 const apiUrl = 'https://www.googleapis.com/youtube/v3/videos';
 
 // Lista de identificadores de video que deseas mostrar
-const videoIds = ['2tXQbi16EdI', 'KrpKmehR--A', 'ZIm_qrJSOds', '8I463L8UaTI'];
+const videoIds = ['2tXQbi16EdI', 'fyctbKQgClY', 'ZIm_qrJSOds', 'In58AKwTero'];
 
 // Parámetros de la solicitud
 const params = {
-  key: 'AIzaSyD3vKSQWl21Vlp4CYyk0h10T2iezP7hd9c', // Reemplaza 'TU_CLAVE_DE_API' con tu clave de API
+  key: 'AIzaSyD3vKSQWl21Vlp4CYyk0h10T2iezP7hd9c', 
   part: 'snippet',
-  id: videoIds.join(','), // Unión de IDs de video separados por comas
+  id: videoIds.join(','), 
 };
 
 // Realiza la solicitud

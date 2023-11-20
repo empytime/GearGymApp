@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="danger">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>{{ categoria }}</ion-title>
   </ion-toolbar>
@@ -17,9 +17,79 @@
           </ion-card-header>
           <ion-card-content>
             <iframe width="100%" height="315" [src]="getVideoUrl(video.id)" frameborder="0" allowfullscreen></iframe>
-            
           </ion-card-content>
         </ion-card>
+
+        <!-- Espaciador para separar el video y el cuadro de texto -->
+        <ion-row class="ion-padding">
+          <ion-col size="12">
+            <ion-textarea readonly class="small-textarea ion-text-center" *ngIf="categoria === 'Categoría 1'">
+              <strong>Flexiones de Bíceps con Barra:</strong>
+              - Desarrolla los bíceps.
+              - De pie, sostén una barra y levántala hacia los hombros.<br>
+
+              <strong>Fondos en Paralelas:</strong>
+              - Trabaja tríceps y parte superior del brazo.
+              - Utiliza barras paralelas, baja el cuerpo flexionando los codos, y luego sube.<br>
+              <br>
+              <strong>Curl Martillo:</strong>
+              - Trabaja bíceps y antebrazos.
+              - Sujeta pesas con las palmas enfrentadas, levántalas hacia los hombros y baja controladamente.<br>
+              <br>
+              <strong>Press de Tríceps en Polea Alta:</strong>
+              - Aísla y fortalece tríceps.
+              - Usa una polea alta, extiende los brazos hacia abajo y regresa.<br>
+              <br>
+              <strong>Flexiones Diamante:</strong>
+              - Trabaja intensamente los tríceps.
+              - En posición de flexiones, coloca las manos formando un triángulo y baja el cuerpo.
+            </ion-textarea>
+
+            <ion-textarea readonly class="small-textarea ion-text-center" *ngIf="categoria === 'Categoría 2'">
+              <strong>Dominadas:</strong>
+              - Trabaja la espalda superior.
+              - Suspendido de una barra, levanta tu cuerpo hasta que tu barbilla esté sobre la barra.<br>
+
+              <strong>Peso Muerto:</strong>
+              - Fortalece toda la espalda y la cadena posterior.
+              - Levanta una barra desde el suelo manteniendo la espalda recta.<br>
+
+              <strong>Remo con Barra T:</strong>
+              - Enfoca la espalda media.
+              - Inclinado sobre una barra T, levanta la barra hacia tu pecho.<br>
+
+              <strong>Hiperextensiones:</strong>
+              - Trabaja la parte baja de la espalda.
+              - En una máquina de hiperextensiones, inclínate hacia adelante y levanta tu torso.<br>
+
+              <strong>Pull-Ups con Agarre Ancho:</strong>
+              - Acentúa la parte externa de la espalda.
+              - Similar a las dominadas, pero con un agarre más amplio.<br>
+            </ion-textarea>
+
+            <ion-textarea readonly class="small-textarea ion-text-center" *ngIf="categoria === 'Categoría 3'">
+              <strong>Sentadillas:</strong>
+              - Trabaja cuádriceps, glúteos y isquiotibiales.
+              - Desciende tu cuerpo doblando las rodillas y luego vuelve a la posición inicial.<br>
+
+              <strong>Zancadas:</strong>
+              - Fortalece piernas y glúteos.
+              - Da un paso adelante y flexiona ambas rodillas hasta formar dos ángulos de 90 grados.<br>
+
+              <strong>Prensa de Piernas:</strong>
+              - Se centra en cuádriceps.
+              - Empuja una plataforma con el peso hacia arriba utilizando las piernas.<br>
+
+              <strong>Extensiones de Cuádriceps:</strong>
+              - Aísla los cuádriceps.
+              - Extiende las piernas contra resistencia.<br>
+
+              <strong>Elevación de Talones:</strong>
+              - Trabaja los músculos de la pantorrilla.
+              - Levanta los talones mientras estás de pie.<br>
+            </ion-textarea>
+          </ion-col>
+        </ion-row>
       </ion-col>
     </ion-row>
   </ion-grid>

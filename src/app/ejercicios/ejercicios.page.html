@@ -1,14 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Ejercicios</ion-title>
+<ion-header >
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Ejercicios</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-text-center" color="light">
   <ion-list>
-    <ion-item (click)="irAVideos('Categoría 1')">Categoría 1</ion-item>
-    <ion-item (click)="irAVideos('Categoría 2')">Categoría 2</ion-item>
-    <ion-item (click)="irAVideos('Categoría 3')">Categoría 3</ion-item>
-    <!-- Agrega más categorías según sea necesario -->
+    <ion-item (click)="irAVideos('Categoría 1')" class="exercise-item">
+      <ion-img class="exercise-image" src="../../assets/images/1.stretching_icon_white_background.jpg"></ion-img>
+      <ion-title class="ion-text-center">Rutinas de Brazo</ion-title>
+    </ion-item>
+    <ion-item (click)="irAVideos('Categoría 2')" class="exercise-item">
+      <ion-img class="exercise-image" src="../../assets/images/espalda2.jpg"></ion-img>
+      <ion-title class="ion-text-center">Rutina de Espalda</ion-title>
+    </ion-item>
+    <ion-item (click)="irAVideos('Categoría 3')" class="exercise-item">
+      <ion-img class="exercise-image" src="../../assets/images/10.stretching_icon_white_background.jpg"></ion-img>
+      <ion-title class="ion-text-center">Rutina de Pierna</ion-title>
+    </ion-item>
   </ion-list>
 </ion-content>

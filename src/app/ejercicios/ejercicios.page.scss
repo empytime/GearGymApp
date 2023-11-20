@@ -1,0 +1,25 @@
+page-ejercicios {
+    ion-content {
+      ion-list {
+        .exercise-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+  
+          ion-img.exercise-image {
+            max-width: 100%; /* Cambiado a 100% para ajustarse al ancho del contenedor */
+            height: auto;
+            border: 2px solid black;
+            margin-bottom: 10px; /* Espaciado entre la imagen y el título */
+          }
+  
+          ion-title {
+            color: white;
+            font-weight: bold;
+            font-size: 18px; /* Ajusta el tamaño de la fuente según sea necesario */
+          }
+        }
+      }
+    }
+  }
