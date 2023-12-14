@@ -11,12 +11,20 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { IonicStorageModule } from '@ionic/storage-angular';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { FullCalendarModule } from '@fullcalendar/angular'; 
+import { FirebaseEventService } from './services/../firebase-event.service';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { FirebaseService } from './services/login-register/firebase.service';
+import { HttpClientModule } from '@angular/common/http';
+// import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
 @NgModule({
   declarations: [AppComponent, SidemenuComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FullCalendarModule,
+    AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     IonicModule.forRoot(),
     AppRoutingModule,
@@ -27,9 +35,12 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
       name: '__mydb',
       driverOrder: ['indexeddb', 'sqlite', 'websql'],
     }),
+    
+     
   ],
   exports: [SidemenuComponent],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy},BarcodeScanner],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy},FirebaseEventService,
+    FirebaseService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

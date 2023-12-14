@@ -1,16 +1,29 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>nutricion</ion-title>
+<ion-header>
+  
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Noticias Deportivas
+    </ion-title>
   </ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-back-button></ion-back-button>
-  </ion-buttons>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">nutricion</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list *ngIf="newsArticles.length > 0">
+    <ion-item *ngFor="let article of newsArticles" lines="full">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="getFullImageUrl(article.urlToImage)" alt="Noticia Imagen" (ionError)="handleImageError($event)"></ion-img>
+      </ion-thumbnail>
+      
+      <ion-label>
+        <h2>{{ article.title }}</h2>
+        <p class="description">{{ article.description }}</p>
+        <p class="date">{{ article.publishedAt | date:'medium' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-spinner *ngIf="newsArticles.length === 0" color="primary"></ion-spinner>
 </ion-content>

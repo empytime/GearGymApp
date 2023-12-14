@@ -39,6 +39,9 @@ export class InicioPage implements OnInit {
   irACalculadora() {
     this.navCtrl.navigateForward('calculadora');
   }
+  irAnutricion() {
+    this.navCtrl.navigateForward('nutricion');
+  }
 
   onClick() {
     this.menuCtrl.toggle();

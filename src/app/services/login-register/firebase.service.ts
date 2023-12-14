@@ -5,6 +5,12 @@ import { getAuth, Auth, createUserWithEmailAndPassword, signInWithEmailAndPasswo
   providedIn: 'root'
 })
 export class FirebaseService {
+  addEvent(event: any) {
+    throw new Error('Method not implemented.');
+  }
+  getEvents() {
+    throw new Error('Method not implemented.');
+  }
   private auth: Auth;
 
   constructor() {

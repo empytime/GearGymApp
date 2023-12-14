@@ -48,14 +48,18 @@ const routes: Routes = [
     path: 'videos/:categoria',
     loadChildren: () => import('./videos/videos.module').then( m => m.VideosPageModule)
   },
-  {
-    path: 'barcode-scan',
-    loadChildren: () => import('./barcode-scan/barcode-scan.module').then( m => m.BarcodeScanPageModule)
-  },
+  // {
+  //   path: 'barcode-scan',
+  //   loadChildren: () => import('./barcode-scan/barcode-scan.module').then( m => m.BarcodeScanPageModule)
+  // },
   {
     path: 'calculadora',
     loadChildren: () => import('./calculadora/calculadora.module').then( m => m.CalculadoraPageModule)
+  },  {
+    path: 'calendario',
+    loadChildren: () => import('./calendario/calendario.module').then( m => m.CalendarioPageModule)
   },
+
 
 ];
 

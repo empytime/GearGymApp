@@ -1,17 +1,17 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+// import { NgModule } from '@angular/core';
+// import { Routes, RouterModule } from '@angular/router';
 
-import { BarcodeScanPage } from './barcode-scan.page';
+// import { BarcodeScanPage } from './barcode-scan.page';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: BarcodeScanPage
-  }
-];
+// const routes: Routes = [
+//   {
+//     path: '',
+//     component: BarcodeScanPage
+//   }
+// ];
 
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
-})
-export class BarcodeScanPageRoutingModule {}
+// @NgModule({
+//   imports: [RouterModule.forChild(routes)],
+//   exports: [RouterModule],
+// })
+// export class BarcodeScanPageRoutingModule {}

@@ -1,15 +1,12 @@
+// calendario.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
+import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarioPageRoutingModule } from './calendario-routing.module';
-
+import { FirebaseEventService } from '../services/../firebase-event.service'; // Ajusta la importación
 import { CalendarioPage } from './calendario.page';
-import { NgCalendarModule } from 'ionic6-calendar';
-
-import { IonicStorageModule } from '@ionic/storage-angular';
 
 @NgModule({
   imports: [
@@ -17,10 +14,9 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     FormsModule,
     IonicModule,
     CalendarioPageRoutingModule,
-    NgCalendarModule,
-    IonicStorageModule.forRoot(),
-
+    FullCalendarModule,
   ],
-  declarations: [CalendarioPage]
+  declarations: [CalendarioPage],
+  providers: [FirebaseEventService], // Usa el servicio correcto en la lista de providers
 })
 export class CalendarioPageModule {}
